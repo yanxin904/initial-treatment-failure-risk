@@ -13,6 +13,7 @@ feature_names = [
     "LDH", "Mb","CK-MB","PCT", "T", "P","CRP","RDW-SD"
 ]
 
+
 # Streamlit user interface
 st.title("Failure of initial treatment for severe pneumonia")
 
