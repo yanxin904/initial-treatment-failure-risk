@@ -1,4 +1,3 @@
-#以下内容来源：微信公众号一篇-收藏夹里找
 import streamlit as st
 import joblib
 import numpy as np
@@ -8,12 +7,6 @@ import matplotlib.pyplot as plt
 
 # Load the model
 model = joblib.load(r'D:\project\重症肺炎模型预处理、SMOTE、建模、验证等\XGB10.joblib')
-
-# 如果有分类变量，需要定义特征选项
-#Quinolone_options = {
-#    1: 'use',
-#    0: 'not use'
-#}
 
 # Define feature names
 feature_names = [
@@ -32,9 +25,6 @@ T = st.number_input("T:", min_value=36.0, max_value=40.0, value=37.0)
 P = st.number_input("P:", min_value=50.0, max_value=150.0, value=90.0)
 CRP = st.number_input("CRP:", min_value=1.0, max_value=400.0, value=100.0)
 RDW_SD = st.number_input("RDW-SD:", min_value=30.0, max_value=80.0, value=50.0)
-
-# 如果是二分类变量，这里设置选择框
-#Carbapenems = st.selectbox("Chest pain type:", options=list(cp_options.keys()), format_func=lambda x: cp_options[x])
 
 # Process inputs and make predictions
 feature_values = [LDH, Mb, CK_MB, PCT, T, P,CRP,RDW_SD]
@@ -83,7 +73,3 @@ if st.button("Predict"):
     plt.savefig("shap_force_plot.png", bbox_inches='tight', dpi=1200)
 
     st.image("shap_force_plot.png")
-
-#确保在命令行中运行 Streamlit 应用程序，使用以下命令：
-#按 Win + R 打开运行对话框，输入 cmd 并按回车，打开命令提示符。
-# 在python的终端 输入命令：streamlit run "D:\project\Streamlit在线应用程序开发.py"
