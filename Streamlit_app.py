@@ -6,7 +6,7 @@ import shap
 import matplotlib.pyplot as plt
 
 # Load the model
-model = joblib.load(r'D:\project\重症肺炎模型预处理、SMOTE、建模、验证等\XGB10.joblib')
+model = joblib.load("XGB10.joblib")
 
 # Define feature names
 feature_names = [
